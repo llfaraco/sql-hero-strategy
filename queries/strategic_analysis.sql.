@@ -1,1 +1,11 @@
+-- Objetivo: Identificar universos com média de poder crítica para alocação de reforços.
+-- Raciocínio: Agrupar por universo, calcular média e filtrar os que estão abaixo do limite aceitável.
 
+SELECT 
+    universo, 
+    COUNT(*) AS total_herois,
+    AVG(nivel_poder) AS media_poder
+FROM squad_heroes
+GROUP BY universo
+HAVING AVG(nivel_poder) < 80 -- Definimos 80 como o limite de segurança
+ORDER BY media_poder ASC;
