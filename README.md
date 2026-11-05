@@ -1,22 +1,39 @@
-# 🛡️ SQL Hero Strategy: Decision Making with Data
+# SQL Hero Strategy | Agregação e priorização
 
-"Ferramenta por si só não resolve nada, pensamento analítico e conhecimento de negócio sim."
+**Exercício didático · SQL · Dados fictícios**
 
-Este repositório demonstra como utilizo **SQL** para transformar dados brutos em decisões estratégicas, utilizando uma analogia com o universo de super-heróis para facilitar o entendimento de conceitos complexos de análise de dados.
+## Problema
 
-## 🧠 O Problema de Negócio
-Imagine que somos analistas na **S.H.I.E.L.D.** e precisamos otimizar a alocação de equipes de resgate. O desafio não é apenas saber quantos heróis temos, mas sim identificar **gargalos operacionais**: quais grupos (universos) possuem uma média de poder crítica e precisam de reforços imediatos?
+Em um cenário fictício de equipes de super-heróis, quais universos apresentam média de poder abaixo do limite definido e devem ser avaliados primeiro?
 
-## 🚀 Como minha cabeça funciona para resolver isso (kk
-Para sair do básico e entregar valor real, utilizei uma query estruturada em 4 pilares:
+O exercício conecta uma pergunta de priorização a uma consulta simples e interpretável.
 
-1. **Agrupamento (`GROUP BY`)**: Para enxergar o panorama macro por categoria (Marvel vs DC).
-2. **Métricas de Agregação (`AVG`, `COUNT`)**: Para quantificar a saúde e o tamanho de cada frente de batalha.
-3. **Filtro de Grupo (`HAVING`)**: O grande diferencial. Aqui eu separo o ruído do sinal, filtrando apenas os grupos que estão abaixo da meta de segurança.
-4. **Ordenação (`ORDER BY`)**: Para garantir que o problema mais urgente apareça primeiro na mesa do tomador de decisão.
+## Conceitos praticados
 
-## 📂 Estrutura do Projeto
-- `data/setup.sql`: Script para criação do banco de dados e inserção dos dados dos heróis.
-- `queries/strategic_analysis.sql`: A consulta estratégica comentada passo a passo.
+- `GROUP BY` para consolidar por universo.
+- `COUNT` e `AVG` para medir tamanho e média do grupo.
+- `HAVING` para filtrar médias inferiores a 80.
+- `ORDER BY` para apresentar os menores valores primeiro.
 
----
+O limite de 80 é uma regra do exercício, não uma conclusão estatística.
+
+## Arquivos
+
+- [Criação e dados de exemplo](data/setup.sql).
+- [Consulta de análise](queries/strategic_analysis.sql.).
+
+**Atenção ao nome:** a consulta está versionada como `strategic_analysis.sql.`, com um ponto após a extensão.
+
+## Como explorar
+
+Execute primeiro `data/setup.sql` e, depois, a consulta em um ambiente SQL compatível com a sintaxe do script. A compatibilidade com um SGBD específico não foi validada nesta revisão.
+
+## Aplicação do raciocínio
+
+A mesma estrutura de pergunta pode apoiar análises de equipes, canais e regiões: escolher a unidade de comparação, definir a métrica, estabelecer um critério e ordenar as prioridades.
+
+Este repositório é um exercício de SQL, sem dados reais ou impacto operacional medido.
+
+## Contato
+
+[Lucas Faraco](https://www.linkedin.com/in/lucasrfaraco) · [E-mail](mailto:lucas.rfaraco@gmail.com) · [Perfil e portfólio](https://github.com/llfaraco)
