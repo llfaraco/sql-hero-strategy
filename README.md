@@ -1,39 +1,33 @@
-# SQL Hero Strategy | Agregação e priorização
+# SQL Hero Strategy | Agregação para priorização
 
-**Exercício didático · SQL · Dados fictícios**
+**Exercício didático · SQLite · GROUP BY · HAVING**
 
-## Problema
+Em um cenário fictício, quais universos têm média de poder inferior a 80 e devem ser avaliados primeiro?
 
-Em um cenário fictício de equipes de super-heróis, quais universos apresentam média de poder abaixo do limite definido e devem ser avaliados primeiro?
+## Executar e conferir
 
-O exercício conecta uma pergunta de priorização a uma consulta simples e interpretável.
+O teste usa SQLite da biblioteca padrão do Python; sem dependências externas.
 
-## Conceitos praticados
+```bash
+python -m unittest discover -s tests
+```
 
-- `GROUP BY` para consolidar por universo.
-- `COUNT` e `AVG` para medir tamanho e média do grupo.
-- `HAVING` para filtrar médias inferiores a 80.
-- `ORDER BY` para apresentar os menores valores primeiro.
+Para executar manualmente em SQLite, use `data/setup.sql` e depois `queries/strategic_analysis.sql`.
 
-O limite de 80 é uma regra do exercício, não uma conclusão estatística.
+## Resultado do exercício
 
-## Arquivos
+| Universo | Heróis | Média |
+| --- | ---: | ---: |
+| DC | 4 | 74,5 |
 
-- [Criação e dados de exemplo](data/setup.sql).
-- [Consulta de análise](queries/strategic_analysis.sql.).
+O teste cria o banco em memória, carrega os dados e verifica filtro, contagem e média. Marvel não aparece porque sua média não atende ao limite escolhido.
 
-**Atenção ao nome:** a consulta está versionada como `strategic_analysis.sql.`, com um ponto após a extensão.
+## Raciocínio
 
-## Como explorar
+Agrupar pela unidade de comparação, calcular tamanho e média, filtrar o conjunto com `HAVING` e ordenar pela menor média. O limite de 80 é uma regra fictícia do exercício, não uma descoberta estatística.
 
-Execute primeiro `data/setup.sql` e, depois, a consulta em um ambiente SQL compatível com a sintaxe do script. A compatibilidade com um SGBD específico não foi validada nesta revisão.
+O arquivo com nome correto `strategic_analysis.sql` foi acrescentado. A cópia antiga com ponto após a extensão foi preservada para manter compatibilidade de links.
 
-## Aplicação do raciocínio
+Revisão e teste implementados com assistência de IA. A aplicação é didática, sem dados reais ou impacto operacional medido.
 
-A mesma estrutura de pergunta pode apoiar análises de equipes, canais e regiões: escolher a unidade de comparação, definir a métrica, estabelecer um critério e ordenar as prioridades.
-
-Este repositório é um exercício de SQL, sem dados reais ou impacto operacional medido.
-
-## Contato
-
-[Lucas Faraco](https://www.linkedin.com/in/lucasrfaraco) · [E-mail](mailto:lucas.rfaraco@gmail.com) · [Perfil e portfólio](https://github.com/llfaraco)
+[Portfólio](https://github.com/llfaraco)
